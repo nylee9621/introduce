@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>HOME</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function() {
+			$(".category").click(function() {
+				$(".modal").scrollTop(0);
+
+				if($(this).attr("id") == "btn-profile") {
+					$("#profile").addClass("show");
+				} else if($(this).attr("id") == "btn-food") {
+					$("#food").addClass("show");
+				} else if($(this).attr("id") == "btn-cutie") {
+					$("#cutie").addClass("show");
+				} else if($(this).attr("id") == "btn-game") {
+					$("#game").addClass("show");
+				} else if($(this).attr("id") == "btn-kpop") {
+					$("#kpop").addClass("show");
+				} else {
+					$("#fiction").addClass("show");
+				}
+			});
+			$(".btn-close").click(function() {
+				$(".screen").removeClass("show");
+			});
+
+			/* 모달 밖에 클릭하면 모달 닫기 */
+			$(".screen").click(function(e) {
+				if($(e.target).parents(".screen").length < 1) {
+					$(".screen").removeClass("show");
+				}
+			});
+
+			/* 슬라이드 버튼 조작 */
+			var slidePosition = 0;
+			$(".btn-slide-right").click(function() {
+				if(slidePosition == -300) {
+					return 0;
+				} else {
+					slidePosition = slidePosition - 100;
+					$(".slide-list").css("transform", "translateX(" + slidePosition + "%)");
+				}
+			})
+			$(".btn-slide-left").click(function() {
+				if(slidePosition == 0) {
+					return 0;
+				} else {
+					slidePosition = slidePosition + 100;
+					$(".slide-list").css("transform", "translateX(" + slidePosition + "%)");
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+	<div class="background">
+		<div class="container">
+			<div class="category" id="btn-profile">PROFILE</div>
+			<div class="category" id="btn-food">FOOD</div>
+			<div class="category" id="btn-cutie">CUTIE</div>
+			<div id="name">LEE NA YOUNG</div>
+			<div class="category" id="btn-game">GAME</div>
+			<div class="category" id="btn-kpop">K-POP</div>
+			<div class="category" id="btn-fiction">FICTION</div>
+		</div>
+	</div>
+
+	<div class="screen" id="profile">
+		<div class="modal">
+			<h1>PROFILE</h1><hr>
+			<div class="profile-vertical-line">
+				<img class="profile-image" src="나영.png">
+				<div>
+					<div class="profile-title">이름</div>
+					<div class="profile-text">이나영</div>
+					<div class="profile-title">나이</div>
+					<div class="profile-text">26세</div>
+					<div class="profile-title">생일</div>
+					<div class="profile-text">9월 21일</div>
+					<div class="profile-title">자기소개</div>
+					<div class="profile-text">라고 하지만 사실 쓸게 없어서 이 홈페이지도 그냥 제가 좋아하는 것들로 가득 채워봤어요. 이거 쓰는데 옆에서 누가 치킨 먹는 얘기하니까 저도 치킨 생각나네요. 슬프다.</div>
+				</div>
+			</div>
+			<h1><button class="btn-close">×</button></h1>
+		</div>
+	</div>
+
+	<div class="screen" id="food">
+		<div class="modal">
+			<h1>FOOD</h1><hr>
+			<div class="card" style="background-color: #ecd4d4;">
+				<div class="card-image" style="background: url(떡볶이.jpg) no-repeat;"></div>
+				<div class="card-text">
+					<h2>★ 떡볶이 ★</h2>
+					<p>엽기떡볶이, 신전떡볶이, 각종 즉석떡볶이.<br>여러분, 치즈 토핑은 진리입니다!<br>치킨도 좋고, 삼겹살도 좋고, 우리나라에는 맛있는게 너~무나도 많지만 이것도 절대 빠질 수 없다 생각합니다.</p>
+				</div>
+			</div>
+			<div class="card" style="background-color: #e1f1e7;">
+				<div class="card-text">
+					<h2>☆ 녹차 ☆</h2>
+					<p>음료, 아이스크림, 초콜릿, 케이크와 같은 녹차가 들어간 디저트 전부 좋아하지만, 정작 일반 녹차는 카페인 때문에 많이 못 마십니다.<br>그래도 녹차의 씁쓰름한 맛 때문에 애정한다는 거!</p>
+				</div>
+				<div class="card-image" style="background: url(녹차.jpg) no-repeat;"></div>
+			</div>
+			<h1><button class="btn-close">×</button></h1>
+		</div>
+	</div>
+
+	<div class="screen" id="cutie">
+		<div class="modal">
+			<h1>CUTIE</h1><hr>
+			<div class="card3-vertical-line">
+				<div class="card3">
+					<img class="card3-image" src="익명이.png">
+					<div><b>익명이</b></div>
+				</div>
+				<div class="card3">
+					<img class="card3-image" src="몰랑이.png">
+					<div><b>몰랑이</b></div>
+				</div>
+				<div class="card3">
+					<img class="card3-image" src="망붕이.png">
+					<div><b>망붕이</b></div>
+				</div>
+			</div>
+			<div class="cutie-text">귀여운 거 좋아! 진짜 좋아! 특히 이 삼인방 사랑합니다!</div>
+			<h1><button class="btn-close">×</button></h1>
+		</div>
+	</div>
+
+	<div class="screen" id="game">
+		<div class="modal">
+			<h1>GAME</h1><hr>
+			<div class="blog">
+				<div><b>○ 마비노기</b></div>
+				<div class="game-text">제가 중학생 때부터 약 8년을 해온 게임입니다.<br>원래 온라인 게임은 반복성 노가다가 심해서 쉽게 질리는 터라 잘 안 하는데 이 게임은 꾸미는 재미도 있고, 생활형 컨텐츠가 많아 다양하게 즐기고 있습니다. 비록 올해 초 트럭사태를 맞아 잠깐 힘들 때도 있었지만 이만한 게임이 없어 붙박이가 되어버렸습니다.</div>
+			</div>
+			<div class="blog">
+				<div><b>○ 스타듀밸리</b></div>
+				<div class="game-text">슬로우 힐링 농경 생활을 꿈꾼다면 부디 이 게임을! 농장을 꾸미면서 부~자되세요.<br>한때 진짜 푹 빠져서 살았던 적이 있을 정도로 열심히 한 게임입니다. 이 게임의 장점을 꼽는다면 제 값을 다 주고 사도 뽕을 세 개는 뽑을 정도로 컨텐츠가 다양하다는 점입니다. 더군다나 유저 카페에 들어가면 여러 모드가 제작, 배포되고 있어 같은 게임을 또 새롭게 즐길 수도 있습니다. 지금까지의 게임들이 어려웠다면 부디 이 게임을 한 번 즐겨보세요.</div>
+			</div>
+			<div class="slide-wrap">
+				<div class="slide-list">
+					<div class="slide-item">
+						<img class="slide-image" src="마비노기1.png">
+					</div>
+					<div class="slide-item">
+						<img class="slide-image" src="마비노기2.png">
+					</div>
+					<div class="slide-item">
+						<img class="slide-image" src="스타듀밸리1.png">
+					</div>
+					<div class="slide-item">
+						<img class="slide-image" src="스타듀밸리2.png">
+					</div>
+				</div>
+				<div class="btn-slide">
+					<button class="btn-slide-left"><i class="fas fa-arrow-circle-left"></i></button>
+					<button class="btn-slide-right"><i class="fas fa-arrow-circle-right"></i></button>
+				</div>
+			</div>
+			
+			<h1><button class="btn-close">×</button></h1>
+		</div>
+	</div>
+
+	<div class="screen" id="kpop">
+		<div class="modal">
+			<h1>K-POP</h1><hr>
+			<div class="card2-vertical-line">
+				<div class="card2" style="border-color: #42b4e6;">
+					<img class="card2-image" src="비투비.jpg">
+					<div class="card-text">
+						<h2 class="card2-title" style="background-color: #42b4e6;">BTOB</h2>
+						<p>6보컬, 6래퍼, 6투비.<br>실력, 예능감 뭐 하나 빠지지 않는(사실 제정신 하나 빠진) 실력파 그룹입니다.<br>추천하고 싶은 곡은 너무 많지만 그 중에서도 <너없인 안된다>, <그리워하다>, <기도>.</p>
+					</div>
+				</div>
+				<div class="card2" style="border-color: #ff0000;">
+					<img class="card2-image" src="엔플라잉.jpg">
+					<div class="card-text">
+						<h2 class="card2-title" style="background-color: #ff0000;">N.Flying</h2>
+						<p>시원한 밴드곡이 듣고싶다면 이 그룹을 찾아주세요. 노래도 끝내주고, 라이브는 더 끝내줍니다.<br><옥탑방>이 제일 많이 알려져있지만 사실 숨겨진 명곡이 더 많다는 사실!<br>&lt;Moonshot&gt;, &lt;Autumn Dream&gt;, <놔>를 추천합니다.</p>
+					</div>
+				</div>
+				<div class="card2" style="border-color: #92A8D1;">
+					<img class="card2-image" src="세븐틴.jpg">
+					<div class="card-text">
+						<h2 class="card2-title" style="background-color: #92A8D1;">SEVENTEEN</h2>
+						<p>칼군무의 정석. 자급자족의 대명사.<br>장르를 넘나들며 다양한 매력을 보여주고 있는 훌륭한 그룹입니다.<br>감성적인 곡들도 많지만 개인적으로 힘들때 들으면 아주 좋은 <아주 NICE>, <박수>, &lt;HOME;RUN&gt;을 추천해드립니다.<br>지금 이 페이지도 이 노래들 들으면서 만드는 중.</p>
+					</div>
+				</div>
+				<div class="card2" style="border-color: #8A2B2B;">
+					<img class="card2-image" src="드림캐쳐.jpg">
+					<div class="card-text">
+						<h2 class="card2-title" style="background-color: #8A2B2B;">Dreamcatcher</h2>
+						<p>몽환과 락이 만났다!<br>'악몽'을 주제로 한 어두운 분위기 속에서 메탈 사운드와 파워풀한 군무로 무대를 찢어놓습니다.<br>추천곡은 &lt;YOU AND I&gt;, &lt;BOCA&gt;, &lt;Odd Eye&gt;.</p>
+					</div>
+				</div>
+				<div class="card2" style="border-color: #ff509f;">
+					<img class="card2-image" src="아이즈원.jpg">
+					<div class="card-text">
+						<h2 class="card2-title" style="background-color: #ff509f;">IZ*ONE</h2>
+						<p>지금은 비록 해체되었으나 데뷔곡부터 마지막 앨범까지 줄줄이 명곡이었던 그룹.<br>이제는 이들의 개인 활동을 응원하며 당시의 무대영상을 돌려봅니다.<br>한번 들으면 머릿속에서 자동재생되는 <하늘 위로>, &lt;Panorama&gt;, 그리고 개인적으로 좋아하는 &lt;FIESTA&gt;와 &lt;SPACESHIP&gt;을 추천합니다.</p>
+					</div>
+				</div>
+				<div class="card2" style="border-color: #1eb9ef;">
+					<img class="card2-image" src="로켓펀치.jpg">
+					<div class="card-text">
+						<h2 class="card2-title" style="background-color: #1eb9ef;">Rocket Punch</h2>
+						<p>데뷔한지 이제 2년.<br>울림 소속답게 그 격한 춤을 추면서도 흔들리지 않는 가창력을 보여줍니다.<br>아직은 어리지만 크게 성장하길 응원하며 <빔밤붐>과 &lt;Ring Ring&gt;을 추천해드립니다.</p>
+					</div>
+				</div>
+			</div>
+			<h1><button class="btn-close">×</button></h1>
+		</div>
+	</div>
+
+	<div class="screen" id="fiction">
+		<div class="modal">
+			<h1>FICTION</h1><hr>
+			<div class="card4">
+				<div style="background: url(해리포터.jpg) center / auto 100% no-repeat;">
+					<div class="card4-screen">
+						<div class="card4-title">해리 포터</div>
+					</div>
+				</div>
+				<div class="card4-text-right">
+					어려서부터 많은 판타지 소설들을 읽었지만 개인적으로 부동의 1위입니다. 안 본 사람은 있어도 한 번만 본 사람은 없다는 그, 소설입니다. 모두가 이미 잘 알고있기 때문에 자세한 설명은 생략.
+				</div>
+			</div>
+			<div class="card4">
+				<div class="card4-text-left">
+					최근 열심히 챙겨보고 있는 웹툰입니다. 갑자기 아포칼립스물이 되어버린 세계에서 살아남아라! 사실 원작 소설도 사서 읽어봤는데 너무 길어서 중반까지 겨우 읽었다는 슬픈 사실이...
+				</div>
+				<div style="background: url(전독시.jpg) center / auto 200% no-repeat;">
+					<div class="card4-screen">
+						<div class="card4-title">전지적 독자 시점</div>
+					</div>
+				</div>
+			</div>
+			<div class="card4">
+				<div style="background: url(하이큐.jpg) center / auto 100% no-repeat;">
+					<div class="card4-screen">
+						<div class="card4-title">하이큐</div>
+					</div>
+				</div>
+				<div class="card4-text-right">
+					청춘 배구 만화. 키 작은 주인공이 국가대표가 되기까지의 이야기입니다. 우리나라 전 배구 국가대표 김연경 선수도 잘만들었다고 칭찬한 작품으로 꼭꼭 한 번 봐보시길 추천해드립니다.
+				</div>
+			</div>
+			<h1><button class="btn-close">×</button></h1>
+		</div>
+	</div>
+</body>
+</html>
