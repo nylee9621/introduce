@@ -261,6 +261,7 @@ h2 {
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
 	font-size: xx-large;
+	text-align: center;
 }
 .card4-text-left {
 	grid-column: 1 / 4;
@@ -323,6 +324,18 @@ h2 {
 		height: 12%;
 		margin: 10px 0;
 	}
+	.modal {
+		font-size: unset;
+	}
+	h1 {
+		font-size: xx-large;
+	}
+	h2 {
+		font-size: x-large;
+	}
+	.btn-slide i {
+		font-size: xx-large;
+	}
 	.card3-vertical-line {
 		grid-template-columns: none;
 		margin: 0;
@@ -332,6 +345,7 @@ h2 {
 	}
 	.card4-title {
 		word-break: break-all;
+		font-size: x-large;
 	}
 	.profile-vertical-line {
 		grid-template-columns: none;
